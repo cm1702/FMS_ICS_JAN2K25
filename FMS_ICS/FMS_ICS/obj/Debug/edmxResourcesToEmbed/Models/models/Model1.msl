@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fms_db_icsModelStoreContainer" CdmEntityContainer="fms_db_icsEntities">
+    <EntitySetMapping Name="AdminActions">
+      <EntityTypeMapping TypeName="fms_db_icsModel.AdminAction">
+        <MappingFragment StoreEntitySet="AdminActions">
+          <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="ActionDetails" ColumnName="ActionDetails" />
+          <ScalarProperty Name="ActionDate" ColumnName="ActionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="fms_db_icsModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardTypes">
+      <EntityTypeMapping TypeName="fms_db_icsModel.CardType">
+        <MappingFragment StoreEntitySet="CardTypes">
+          <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+          <ScalarProperty Name="CardType1" ColumnName="CardType" />
+          <ScalarProperty Name="LimitAmount" ColumnName="LimitAmount" />
+          <ScalarProperty Name="JoiningFee" ColumnName="JoiningFee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentVerifications">
+      <EntityTypeMapping TypeName="fms_db_icsModel.DocumentVerification">
+        <MappingFragment StoreEntitySet="DocumentVerification">
+          <ScalarProperty Name="VerificationID" ColumnName="VerificationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentStatus" ColumnName="DocumentStatus" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EligibilityCriterias">
+      <EntityTypeMapping TypeName="fms_db_icsModel.EligibilityCriteria">
+        <MappingFragment StoreEntitySet="EligibilityCriteria">
+          <ScalarProperty Name="CriteriaID" ColumnName="CriteriaID" />
+          <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+          <ScalarProperty Name="MinimumIncome" ColumnName="MinimumIncome" />
+          <ScalarProperty Name="AgeLimit" ColumnName="AgeLimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForgotPasswordRequests">
+      <EntityTypeMapping TypeName="fms_db_icsModel.ForgotPasswordRequest">
+        <MappingFragment StoreEntitySet="ForgotPasswordRequests">
+          <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="fms_db_icsModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDetails" ColumnName="ProductDetails" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProcessingFee" ColumnName="ProcessingFee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="fms_db_icsModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchases">
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="TenureMonths" ColumnName="TenureMonths" />
+          <ScalarProperty Name="MonthlyEMI" ColumnName="MonthlyEMI" />
+          <ScalarProperty Name="RemainingEMI" ColumnName="RemainingEMI" />
+          <ScalarProperty Name="LastPaidDate" ColumnName="LastPaidDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="fms_db_icsModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCards">
+      <EntityTypeMapping TypeName="fms_db_icsModel.UserCard">
+        <MappingFragment StoreEntitySet="UserCards">
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="RemainingLimit" ColumnName="RemainingLimit" />
+          <ScalarProperty Name="Validity" ColumnName="Validity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="fms_db_icsModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

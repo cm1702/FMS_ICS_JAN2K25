@@ -160,3 +160,4 @@ D:\Dotnet_Training\MainProject\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramewo
 D:\Dotnet_Training\MainProject\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.SqlServer.dll
 D:\Dotnet_Training\MainProject\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.xml
 D:\Dotnet_Training\MainProject\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.SqlServer.xml
+D:\Dotnet_Training\MainProject\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\System.ComponentModel.Annotations.dll
