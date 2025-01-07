@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FMS_ICS\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:FMS_ICS\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FMS_ICS\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|d:\\dotnet_training\\mainproject\\fms_ics_jan2k25\\fms_ics\\fms_ics\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:fms_ics\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|d:\\dotnet_training\\mainproject\\fms_ics_jan2k25\\fms_ics\\fms_ics\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:fms_ics\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "FMS_ICS\\Models\\Model1.edmx",
+              "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "FMS_ICS\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-01-07T08:31:23.644Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FMS_ICS\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\HomeController.cs",
               "RelativeToolTip": "FMS_ICS\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T06:09:22.335Z",
+              "WhenOpened": "2025-01-07T08:30:41.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
               "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "FMS_ICS\\Controllers\\LoginController.cs",
               "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs",
               "RelativeToolTip": "FMS_ICS\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T06:09:14.699Z",
+              "WhenOpened": "2025-01-07T07:43:43.346Z",
               "EditorCaption": ""
             }
           ]

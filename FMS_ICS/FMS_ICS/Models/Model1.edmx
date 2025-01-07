@@ -1,0 +1,736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="fms_db_icsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminActions">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminID" Type="int" Nullable="false" />
+          <Property Name="ActionType" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ActionDetails" Type="nvarchar(max)" />
+          <Property Name="ActionDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CardTypes">
+          <Key>
+            <PropertyRef Name="CardTypeID" />
+          </Key>
+          <Property Name="CardTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LimitAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="JoiningFee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentVerification">
+          <Key>
+            <PropertyRef Name="VerificationID" />
+          </Key>
+          <Property Name="VerificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="DocumentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DocumentStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="EligibilityCriteria">
+          <Key>
+            <PropertyRef Name="CriteriaID" />
+          </Key>
+          <Property Name="CriteriaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardTypeID" Type="int" Nullable="false" />
+          <Property Name="MinimumIncome" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AgeLimit" Type="int" />
+        </EntityType>
+        <EntityType Name="ForgotPasswordRequests">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="OTP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RequestTime" Type="datetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductDetails" Type="nvarchar(max)" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProcessingFee" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Purchases">
+          <Key>
+            <PropertyRef Name="PurchaseID" />
+          </Key>
+          <Property Name="PurchaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="PurchaseDate" Type="datetime" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TenureMonths" Type="int" />
+          <Property Name="MonthlyEMI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RemainingEMI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LastPaidDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurchaseID" Type="int" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="AmountPaid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RemainingAmount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="UserCards">
+          <Key>
+            <PropertyRef Name="CardID" />
+          </Key>
+          <Property Name="CardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="CardTypeID" Type="int" Nullable="false" />
+          <Property Name="CardNumber" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="RemainingLimit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Validity" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="RegistrationDate" Type="datetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__AdminActi__Admin__5CD6CB2B">
+          <End Role="Admins" Type="Self.Admins" Multiplicity="1" />
+          <End Role="AdminActions" Type="Self.AdminActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="AdminActions">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DocumentV__UserI__5165187F">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="DocumentVerification" Type="Self.DocumentVerification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="DocumentVerification">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Eligibili__CardT__60A75C0F">
+          <End Role="CardTypes" Type="Self.CardTypes" Multiplicity="1" />
+          <End Role="EligibilityCriteria" Type="Self.EligibilityCriteria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CardTypes">
+              <PropertyRef Name="CardTypeID" />
+            </Principal>
+            <Dependent Role="EligibilityCriteria">
+              <PropertyRef Name="CardTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ForgotPas__UserI__5535A963">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="ForgotPasswordRequests" Type="Self.ForgotPasswordRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ForgotPasswordRequests">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Purchases__Produ__48CFD27E">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Purchases" Type="Self.Purchases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Purchases">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Purchases__UserI__47DBAE45">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Purchases" Type="Self.Purchases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Purchases">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Purch__4D94879B">
+          <End Role="Purchases" Type="Self.Purchases" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchases">
+              <PropertyRef Name="PurchaseID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="PurchaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCards__CardT__4222D4EF">
+          <End Role="CardTypes" Type="Self.CardTypes" Multiplicity="1" />
+          <End Role="UserCards" Type="Self.UserCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CardTypes">
+              <PropertyRef Name="CardTypeID" />
+            </Principal>
+            <Dependent Role="UserCards">
+              <PropertyRef Name="CardTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCards__UserI__412EB0B6">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserCards" Type="Self.UserCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserCards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="fms_db_icsModelStoreContainer">
+          <EntitySet Name="AdminActions" EntityType="Self.AdminActions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardTypes" EntityType="Self.CardTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocumentVerification" EntityType="Self.DocumentVerification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EligibilityCriteria" EntityType="Self.EligibilityCriteria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForgotPasswordRequests" EntityType="Self.ForgotPasswordRequests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchases" EntityType="Self.Purchases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCards" EntityType="Self.UserCards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AdminActi__Admin__5CD6CB2B" Association="Self.FK__AdminActi__Admin__5CD6CB2B">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="AdminActions" EntitySet="AdminActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DocumentV__UserI__5165187F" Association="Self.FK__DocumentV__UserI__5165187F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="DocumentVerification" EntitySet="DocumentVerification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Eligibili__CardT__60A75C0F" Association="Self.FK__Eligibili__CardT__60A75C0F">
+            <End Role="CardTypes" EntitySet="CardTypes" />
+            <End Role="EligibilityCriteria" EntitySet="EligibilityCriteria" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ForgotPas__UserI__5535A963" Association="Self.FK__ForgotPas__UserI__5535A963">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ForgotPasswordRequests" EntitySet="ForgotPasswordRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Purchases__Produ__48CFD27E" Association="Self.FK__Purchases__Produ__48CFD27E">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Purchases" EntitySet="Purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Purchases__UserI__47DBAE45" Association="Self.FK__Purchases__UserI__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Purchases" EntitySet="Purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Purch__4D94879B" Association="Self.FK__Transacti__Purch__4D94879B">
+            <End Role="Purchases" EntitySet="Purchases" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCards__CardT__4222D4EF" Association="Self.FK__UserCards__CardT__4222D4EF">
+            <End Role="CardTypes" EntitySet="CardTypes" />
+            <End Role="UserCards" EntitySet="UserCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCards__UserI__412EB0B6" Association="Self.FK__UserCards__UserI__412EB0B6">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserCards" EntitySet="UserCards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fms_db_icsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminAction">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminID" Type="Int32" Nullable="false" />
+          <Property Name="ActionType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ActionDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Admin" Relationship="Self.FK__AdminActi__Admin__5CD6CB2B" FromRole="AdminActions" ToRole="Admins" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AdminActions" Relationship="Self.FK__AdminActi__Admin__5CD6CB2B" FromRole="Admins" ToRole="AdminActions" />
+        </EntityType>
+        <EntityType Name="CardType">
+          <Key>
+            <PropertyRef Name="CardTypeID" />
+          </Key>
+          <Property Name="CardTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardType1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LimitAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="JoiningFee" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="EligibilityCriterias" Relationship="Self.FK__Eligibili__CardT__60A75C0F" FromRole="CardTypes" ToRole="EligibilityCriteria" />
+          <NavigationProperty Name="UserCards" Relationship="Self.FK__UserCards__CardT__4222D4EF" FromRole="CardTypes" ToRole="UserCards" />
+        </EntityType>
+        <EntityType Name="DocumentVerification">
+          <Key>
+            <PropertyRef Name="VerificationID" />
+          </Key>
+          <Property Name="VerificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="DocumentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DocumentStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK__DocumentV__UserI__5165187F" FromRole="DocumentVerification" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="EligibilityCriteria">
+          <Key>
+            <PropertyRef Name="CriteriaID" />
+          </Key>
+          <Property Name="CriteriaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardTypeID" Type="Int32" Nullable="false" />
+          <Property Name="MinimumIncome" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AgeLimit" Type="Int32" />
+          <NavigationProperty Name="CardType" Relationship="Self.FK__Eligibili__CardT__60A75C0F" FromRole="EligibilityCriteria" ToRole="CardTypes" />
+        </EntityType>
+        <EntityType Name="ForgotPasswordRequest">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="OTP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RequestTime" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK__ForgotPas__UserI__5535A963" FromRole="ForgotPasswordRequests" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProcessingFee" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Purchases" Relationship="Self.FK__Purchases__Produ__48CFD27E" FromRole="Products" ToRole="Purchases" />
+        </EntityType>
+        <EntityType Name="Purchase">
+          <Key>
+            <PropertyRef Name="PurchaseID" />
+          </Key>
+          <Property Name="PurchaseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TenureMonths" Type="Int32" />
+          <Property Name="MonthlyEMI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RemainingEMI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LastPaidDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Purchases__Produ__48CFD27E" FromRole="Purchases" ToRole="Products" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Purchases__UserI__47DBAE45" FromRole="Purchases" ToRole="Users" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK__Transacti__Purch__4D94879B" FromRole="Purchases" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RemainingAmount" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Purchase" Relationship="Self.FK__Transacti__Purch__4D94879B" FromRole="Transactions" ToRole="Purchases" />
+        </EntityType>
+        <EntityType Name="UserCard">
+          <Key>
+            <PropertyRef Name="CardID" />
+          </Key>
+          <Property Name="CardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="CardTypeID" Type="Int32" Nullable="false" />
+          <Property Name="CardNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RemainingLimit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Validity" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CardType" Relationship="Self.FK__UserCards__CardT__4222D4EF" FromRole="UserCards" ToRole="CardTypes" />
+          <NavigationProperty Name="User" Relationship="Self.FK__UserCards__UserI__412EB0B6" FromRole="UserCards" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DocumentVerifications" Relationship="Self.FK__DocumentV__UserI__5165187F" FromRole="Users" ToRole="DocumentVerification" />
+          <NavigationProperty Name="ForgotPasswordRequests" Relationship="Self.FK__ForgotPas__UserI__5535A963" FromRole="Users" ToRole="ForgotPasswordRequests" />
+          <NavigationProperty Name="Purchases" Relationship="Self.FK__Purchases__UserI__47DBAE45" FromRole="Users" ToRole="Purchases" />
+          <NavigationProperty Name="UserCards" Relationship="Self.FK__UserCards__UserI__412EB0B6" FromRole="Users" ToRole="UserCards" />
+        </EntityType>
+        <Association Name="FK__AdminActi__Admin__5CD6CB2B">
+          <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
+          <End Role="AdminActions" Type="Self.AdminAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="AdminActions">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Eligibili__CardT__60A75C0F">
+          <End Role="CardTypes" Type="Self.CardType" Multiplicity="1" />
+          <End Role="EligibilityCriteria" Type="Self.EligibilityCriteria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CardTypes">
+              <PropertyRef Name="CardTypeID" />
+            </Principal>
+            <Dependent Role="EligibilityCriteria">
+              <PropertyRef Name="CardTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCards__CardT__4222D4EF">
+          <End Role="CardTypes" Type="Self.CardType" Multiplicity="1" />
+          <End Role="UserCards" Type="Self.UserCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CardTypes">
+              <PropertyRef Name="CardTypeID" />
+            </Principal>
+            <Dependent Role="UserCards">
+              <PropertyRef Name="CardTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DocumentV__UserI__5165187F">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="DocumentVerification" Type="Self.DocumentVerification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="DocumentVerification">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ForgotPas__UserI__5535A963">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="ForgotPasswordRequests" Type="Self.ForgotPasswordRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ForgotPasswordRequests">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Purchases__Produ__48CFD27E">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="Purchases" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Purchases">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Purchases__UserI__47DBAE45">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Purchases" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Purchases">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Purch__4D94879B">
+          <End Role="Purchases" Type="Self.Purchase" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchases">
+              <PropertyRef Name="PurchaseID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="PurchaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCards__UserI__412EB0B6">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserCards" Type="Self.UserCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserCards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="fms_db_icsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminActions" EntityType="Self.AdminAction" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="CardTypes" EntityType="Self.CardType" />
+          <EntitySet Name="DocumentVerifications" EntityType="Self.DocumentVerification" />
+          <EntitySet Name="EligibilityCriterias" EntityType="Self.EligibilityCriteria" />
+          <EntitySet Name="ForgotPasswordRequests" EntityType="Self.ForgotPasswordRequest" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="UserCards" EntityType="Self.UserCard" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__AdminActi__Admin__5CD6CB2B" Association="Self.FK__AdminActi__Admin__5CD6CB2B">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="AdminActions" EntitySet="AdminActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Eligibili__CardT__60A75C0F" Association="Self.FK__Eligibili__CardT__60A75C0F">
+            <End Role="CardTypes" EntitySet="CardTypes" />
+            <End Role="EligibilityCriteria" EntitySet="EligibilityCriterias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCards__CardT__4222D4EF" Association="Self.FK__UserCards__CardT__4222D4EF">
+            <End Role="CardTypes" EntitySet="CardTypes" />
+            <End Role="UserCards" EntitySet="UserCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DocumentV__UserI__5165187F" Association="Self.FK__DocumentV__UserI__5165187F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="DocumentVerification" EntitySet="DocumentVerifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ForgotPas__UserI__5535A963" Association="Self.FK__ForgotPas__UserI__5535A963">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ForgotPasswordRequests" EntitySet="ForgotPasswordRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Purchases__Produ__48CFD27E" Association="Self.FK__Purchases__Produ__48CFD27E">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Purchases" EntitySet="Purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Purchases__UserI__47DBAE45" Association="Self.FK__Purchases__UserI__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Purchases" EntitySet="Purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Purch__4D94879B" Association="Self.FK__Transacti__Purch__4D94879B">
+            <End Role="Purchases" EntitySet="Purchases" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCards__UserI__412EB0B6" Association="Self.FK__UserCards__UserI__412EB0B6">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserCards" EntitySet="UserCards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fms_db_icsModelStoreContainer" CdmEntityContainer="fms_db_icsEntities">
+          <EntitySetMapping Name="AdminActions">
+            <EntityTypeMapping TypeName="fms_db_icsModel.AdminAction">
+              <MappingFragment StoreEntitySet="AdminActions">
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+                <ScalarProperty Name="ActionDetails" ColumnName="ActionDetails" />
+                <ScalarProperty Name="ActionDate" ColumnName="ActionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="fms_db_icsModel.Admin">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CardTypes">
+            <EntityTypeMapping TypeName="fms_db_icsModel.CardType">
+              <MappingFragment StoreEntitySet="CardTypes">
+                <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+                <ScalarProperty Name="CardType1" ColumnName="CardType" />
+                <ScalarProperty Name="LimitAmount" ColumnName="LimitAmount" />
+                <ScalarProperty Name="JoiningFee" ColumnName="JoiningFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentVerifications">
+            <EntityTypeMapping TypeName="fms_db_icsModel.DocumentVerification">
+              <MappingFragment StoreEntitySet="DocumentVerification">
+                <ScalarProperty Name="VerificationID" ColumnName="VerificationID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="DocumentStatus" ColumnName="DocumentStatus" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EligibilityCriterias">
+            <EntityTypeMapping TypeName="fms_db_icsModel.EligibilityCriteria">
+              <MappingFragment StoreEntitySet="EligibilityCriteria">
+                <ScalarProperty Name="CriteriaID" ColumnName="CriteriaID" />
+                <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+                <ScalarProperty Name="MinimumIncome" ColumnName="MinimumIncome" />
+                <ScalarProperty Name="AgeLimit" ColumnName="AgeLimit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForgotPasswordRequests">
+            <EntityTypeMapping TypeName="fms_db_icsModel.ForgotPasswordRequest">
+              <MappingFragment StoreEntitySet="ForgotPasswordRequests">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OTP" ColumnName="OTP" />
+                <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="fms_db_icsModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductDetails" ColumnName="ProductDetails" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProcessingFee" ColumnName="ProcessingFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchases">
+            <EntityTypeMapping TypeName="fms_db_icsModel.Purchase">
+              <MappingFragment StoreEntitySet="Purchases">
+                <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TenureMonths" ColumnName="TenureMonths" />
+                <ScalarProperty Name="MonthlyEMI" ColumnName="MonthlyEMI" />
+                <ScalarProperty Name="RemainingEMI" ColumnName="RemainingEMI" />
+                <ScalarProperty Name="LastPaidDate" ColumnName="LastPaidDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="fms_db_icsModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCards">
+            <EntityTypeMapping TypeName="fms_db_icsModel.UserCard">
+              <MappingFragment StoreEntitySet="UserCards">
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="RemainingLimit" ColumnName="RemainingLimit" />
+                <ScalarProperty Name="Validity" ColumnName="Validity" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="fms_db_icsModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
