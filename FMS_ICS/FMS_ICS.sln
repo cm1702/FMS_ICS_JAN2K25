@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35325.158
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMS_ICS", "FMS_ICS\FMS_ICS.csproj", "{7A41107E-473E-4BC9-8738-DF4B36395FC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A41107E-473E-4BC9-8738-DF4B36395FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A41107E-473E-4BC9-8738-DF4B36395FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A41107E-473E-4BC9-8738-DF4B36395FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A41107E-473E-4BC9-8738-DF4B36395FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B597D4A-D657-4979-9133-C0D155656F02}
+	EndGlobalSection
+EndGlobal
