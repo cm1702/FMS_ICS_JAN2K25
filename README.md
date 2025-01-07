@@ -12,4 +12,4 @@ Tech Stack used :
 C#, ASP.NET, ASP.NET MVC, Entity Framework, SQL SERVER, Bootstrap 5
 
 Development team:
-Ajay Sairam, Bhanuprakash Patapanchala, Chiramya Mohindra,Sainaga Gokavarapu, Hareesh Anand, Poormitha Kalapala, Renuka Kollu (Infinite Computer Solutions, Visakhapatnam & Chennai )
+Ajay Sairam, Bhanuprakash Patapanchala, Chiramya Mohindra, Sainaga Gokavarapu, Hareesh Anand, Poormitha Kalapala, Renuka Kollu (Infinite Computer Solutions, Visakhapatnam & Chennai )
