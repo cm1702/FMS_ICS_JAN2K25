@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FMS_ICS.Models
+namespace FMS_ICS
 {
     using System;
     using System.Collections.Generic;
