@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5677fb4792641fd89fbda356afb7abe" Name="Diagram1">
+        <EntityTypeShape EntityType="fms_db_icsModel.AdminAction" Width="1.5" PointX="11" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.Admin" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.CardType" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.DocumentVerification" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.EligibilityCriteria" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.ForgotPasswordRequest" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.Product" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.Purchase" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.Transaction" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.UserCard" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="fms_db_icsModel.User" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="fms_db_icsModel.FK__AdminActi__Admin__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__Eligibili__CardT__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__UserCards__CardT__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__DocumentV__UserI__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__ForgotPas__UserI__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__Purchases__Produ__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__Purchases__UserI__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__Transacti__Purch__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="fms_db_icsModel.FK__UserCards__UserI__412EB0B6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

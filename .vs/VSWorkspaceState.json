@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\FMS_ICS",
+    "\\FMS_ICS\\FMS_ICS",
+    "\\FMS_ICS\\FMS_ICS\\Controllers",
+    "\\FMS_ICS\\FMS_ICS\\Views",
+    "\\FMS_ICS\\FMS_ICS\\Views\\Login",
+    "\\FMS_ICS\\FMS_ICS\\Views\\Register"
+  ],
+  "SelectedNode": "\\FMS_ICS\\FMS_ICS\\Views\\Login\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

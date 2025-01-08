@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Finance Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        .container {
+            padding-bottom: 3rem;
+        }
+
+        .system-title {
+            color: #2c3e50;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-header {
+            background-color: #fff;
+            border-bottom: none;
+            padding: 1rem 1rem 0;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+            gap: 0.5rem;
+            padding: 0 1rem;
+        }
+
+            .nav-tabs .nav-link {
+                border: none;
+                color: #6c757d;
+                font-weight: 600;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+
+                .nav-tabs .nav-link:hover {
+                    color: #4a90e2;
+                    background-color: #f8f9fa;
+                }
+
+                .nav-tabs .nav-link.active {
+                    color: #4a90e2;
+                    background-color: #f8f9fa;
+                    border: none;
+                    position: relative;
+                }
+
+                    .nav-tabs .nav-link.active::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 50%;
+                        height: 3px;
+                        background-color: #4a90e2;
+                        border-radius: 3px;
+                    }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            transition: border-color 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: #4a90e2;
+                box-shadow: none;
+            }
+
+        .btn-primary {
+            background-color: #4a90e2;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #357abd;
+                transform: translateY(-2px);
+            }
+
+        .btn-outline-primary {
+            color: #4a90e2;
+            border-color: #4a90e2;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+            .btn-outline-primary:hover {
+                background-color: #4a90e2;
+                color: white;
+            }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-content {
+            padding: 1rem;
+        }
+
+        .lead {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    @{
+        ViewBag.Title = "Login - Finance Management System";
+    }
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Navigation Links -->
+                <div class="text-center mb-5">
+                    <h2 class="system-title">Finance Management System</h2>
+                    <p class="lead">
+                        New user?
+                        <a href="@Url.Action("Index", "Register")" class="btn btn-outline-primary ms-3">Register Here</a>
+                    </p>
+                </div>
+                <!-- Login Forms Container -->
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#user-login" type="button">
+                                    <i class="fas fa-user me-2"></i>User Login
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#admin-login" type="button">
+                                    <i class="fas fa-user-shield me-2"></i>Admin Login
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <!-- User Login Form -->
+                            <div class="tab-pane fade show active" id="user-login">
+                                @using (Html.BeginForm("UserLogin", "Login", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group">
+                                        <label><i class="fas fa-user me-2"></i>Username</label>
+                                        <input type="text" name="username" class="form-control" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label><i class="fas fa-lock me-2"></i>Password</label>
+                                        <input type="password" name="password" class="form-control" required />
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                            <!-- Admin Login Form -->
+                            <div class="tab-pane fade" id="admin-login">
+                                @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group">
+                                        <label><i class="fas fa-user-shield me-2"></i>Admin Username</label>
+                                        <input type="text" name="username" class="form-control" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label><i class="fas fa-lock me-2"></i>Password</label>
+                                        <input type="password" name="password" class="form-control" required />
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-sign-in-alt me-2"></i>Admin Login
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>

@@ -72,8 +72,12 @@ C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\System.Web.WebPages.Razor.xml
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\Newtonsoft.Json.xml
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\Antlr3.Runtime.pdb
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\obj\Debug\FMS_ICS.csproj.AssemblyReference.cache
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\obj\Debug\FMS_ICS.csproj.CoreCompileInputs.cache
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\obj\Debug\FMS_ICS.csproj.CopyComplete
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\obj\Debug\FMS_ICS.dll
 C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\obj\Debug\FMS_ICS.pdb
+C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.dll
+C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.SqlServer.dll
+C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.xml
+C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\bin\EntityFramework.SqlServer.xml
+C:\Training\FMS_ICS_JAN2K25\FMS_ICS\FMS_ICS\obj\Debug\FMS_ICS.csproj.AssemblyReference.cache

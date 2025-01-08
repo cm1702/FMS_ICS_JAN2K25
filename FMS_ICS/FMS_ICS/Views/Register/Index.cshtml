@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Finance Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        .container {
+            padding-bottom: 3rem;
+        }
+
+        .system-title {
+            color: #2c3e50;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-header {
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .option-card {
+            height: 100%;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+        }
+
+        .gold-card {
+            background: linear-gradient(145deg, #d6bb29 0%, #f8f9fa 100%);
+        }
+
+        .titanium-card {
+            background: linear-gradient(145deg, #77aded 0%, #f8f9fa 100%);
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            transition: border-color 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: #4a90e2;
+                box-shadow: none;
+            }
+
+        .btn-primary {
+            background-color: #4a90e2;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #357abd;
+                transform: translateY(-2px);
+            }
+
+        .btn-outline-primary {
+            color: #4a90e2;
+            border-color: #4a90e2;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #4a90e2;
+            color: white;
+            }
+
+        .text-danger {
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Card type specific styles */
+        .text-warning {
+            color: #ffd700 !important;
+        }
+
+        .text-info {
+            color: #4a90e2 !important;
+        }
+
+        .list-unstyled li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    @model FMS_ICS.Models.User
+
+    @{
+        ViewBag.Title = "Register - Finance Management System";
+    }
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Navigation Links -->
+                <div class="text-center mb-5">
+                    <h2 class="system-title">Finance Management System</h2>
+                    <p class="lead">
+                        Already have an account?
+                        <a href="@Url.Action("Index", "Login")" class="btn btn-outline-primary ms-3">Login Here</a>
+                    </p>
+                </div>
+
+                <!-- Card Options -->
+                <div class="row mb-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="card option-card gold-card">
+                            <div class="card-body">
+                                <h5 class="card-title text-warning mb-4">Gold Card</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check me-2"></i>Credit Limit: ₹50,000</li>
+                                    <li><i class="fas fa-check me-2"></i>Joining Fee: ₹500</li>
+                                    <li><i class="fas fa-check me-2"></i>Ideal for everyday purchases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card option-card titanium-card">
+                            <div class="card-body">
+                                <h5 class="card-title text-info mb-4">Titanium Card</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check me-2"></i>Credit Limit: ₹100,000</li>
+                                    <li><i class="fas fa-check me-2"></i>Joining Fee: ₹1,000</li>
+                                    <li><i class="fas fa-check me-2"></i>Premium benefits & rewards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="card">
+                    @*<div class="card-header">
+                        <h4 class="mb-0">Register for New Card</h4>
+                    </div>*@
+                    <div class="card-body p-4">
+                        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger mb-4" })
+
+                        <div class="container mt-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <!-- Navigation Links -->
+                                    @*<div class="text-center mb-4">
+                                        <h2>Finance Management System</h2>
+                                        <p>
+                                            Already have an account?
+                                            <a href="@Url.Action("Index", "Login")" class="btn btn-outline-primary">Login Here</a>
+                                        </p>
+                                    </div>*@
+
+                                    <!-- Card Options -->
+                                    @*<div class="row mb-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-light">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-warning">Gold Card</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li>Credit Limit: ₹50,000</li>
+                                                        <li>Joining Fee: ₹500</li>
+                                                        <li>Ideal for everyday purchases</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-light">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-info">Titanium Card</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li>Credit Limit: ₹100,000</li>
+                                                        <li>Joining Fee: ₹1,000</li>
+                                                        <li>Premium benefits & rewards</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                    <!-- Registration Form -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="mb-0">Register for New Card</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+                                            {
+                                                @*@Html.AntiForgeryToken()*@
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            @Html.LabelFor(m => m.FullName, "Full Name")
+                                                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            @Html.LabelFor(m => m.PhoneNumber, "Phone Number")
+                                                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-3">
+                                                    @Html.LabelFor(m => m.Email, "Email")
+                                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            @Html.LabelFor(m => m.Username, "Username")
+                                                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            @Html.LabelFor(m => m.Password, "Password")
+                                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-3">
+                                                    <label>Confirm Password</label>
+                                                    <input type="password" name="ConfirmPassword" class="form-control" required />
+                                                </div>
+
+                                                <div class="form-group mb-3">
+                                                    @Html.LabelFor(m => m.Address, "Address")
+                                                    @Html.TextAreaFor(m => m.Address, new { @class = "form-control", rows = "3" })
+                                                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            <label>Card Type</label>
+                                                            @Html.DropDownList("selectedCardType", (SelectList)ViewBag.CardTypes, "Select Card Type", new { @class = "form-control" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            <label>Bank Name</label>
+                                                            <select class="form-control" name="BankName" required>
+                                                                <option value="">Select Bank</option>
+                                                                <option value="SBI">State Bank of India</option>
+                                                                <option value="HDFC">HDFC Bank</option>
+                                                                <option value="ICICI">ICICI Bank</option>
+                                                                <option value="Axis">Axis Bank</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            <label>Savings Account Number</label>
+                                                            <input type="text" name="AccountNumber" class="form-control" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            <label>IFSC Code</label>
+                                                            <input type="text" name="IFSCCode" class="form-control" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-grid">
+                                                    <button type="submit" class="btn btn-primary">Register</button>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>
