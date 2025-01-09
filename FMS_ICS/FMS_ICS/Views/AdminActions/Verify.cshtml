@@ -1,0 +1,24 @@
+﻿
+@model FMS_ICS.Models.User
+
+@{ ViewBag.Title = "User Details"; }
+
+<h2>User Details</h2>
+
+<div class="user-details">
+    <p><strong>Name:</strong> @Model.FullName</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+    <p><strong>Username:</strong> @Model.Username</p>
+    <p><strong>Address:</strong> @Model.Address</p>
+    <p><strong>Date of Birth:</strong> @Model.DateOfBirth?.ToString("yyyy-MM-dd")</p>
+    <p><strong>Registration Date:</strong> @Model.RegistrationDate?.ToString("yyyy-MM-dd")</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+
+    @using (Html.BeginForm("Activate", "AdminActions", new { id = Model.UserID }, FormMethod.Post))
+    {
+@Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-success">Activate User</button>}
+
+    @Html.ActionLink("Back to Pending Users", "Index", null, new { @class = "btn btn-primary" })
+</div>

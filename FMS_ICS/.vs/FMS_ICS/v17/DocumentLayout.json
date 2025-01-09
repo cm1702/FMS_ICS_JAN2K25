@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\",
+  "WorkspaceRootPath": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|d:\\dotnet_training\\mainproject\\fms_ics_jan2k25\\fms_ics\\fms_ics\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|c:\\renuka\\fms_ics_jan2k25\\fms_ics\\fms_ics\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:fms_ics\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|d:\\dotnet_training\\mainproject\\fms_ics_jan2k25\\fms_ics\\fms_ics\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\fms_ics\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:fms_ics\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|d:\\dotnet_training\\mainproject\\fms_ics_jan2k25\\fms_ics\\fms_ics\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\fms_ics\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:fms_ics\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|d:\\dotnet_training\\mainproject\\fms_ics_jan2k25\\fms_ics\\fms_ics\\models\\user.validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\fms_ics\\models\\user.validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A41107E-473E-4BC9-8738-DF4B36395FC1}|FMS_ICS\\FMS_ICS.csproj|solutionrelative:fms_ics\\models\\user.validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,48 +32,45 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "User.Validation.cs",
-              "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Models\\User.Validation.cs",
+              "DocumentMoniker": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Models\\User.Validation.cs",
               "RelativeDocumentMoniker": "FMS_ICS\\Models\\User.Validation.cs",
-              "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Models\\User.Validation.cs",
+              "ToolTip": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Models\\User.Validation.cs",
               "RelativeToolTip": "FMS_ICS\\Models\\User.Validation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T11:21:53.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T11:21:53.158Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Views\\Login\\Login.cshtml",
+              "DocumentMoniker": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Views\\Login\\Login.cshtml",
               "RelativeDocumentMoniker": "FMS_ICS\\Views\\Login\\Login.cshtml",
-              "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Views\\Login\\Login.cshtml",
               "RelativeToolTip": "FMS_ICS\\Views\\Login\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-07T11:05:37.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T11:05:37.576Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "RegisterController.cs",
-              "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\RegisterController.cs",
+              "DocumentMoniker": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "FMS_ICS\\Controllers\\RegisterController.cs",
-              "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\RegisterController.cs",
               "RelativeToolTip": "FMS_ICS\\Controllers\\RegisterController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAwwBUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T09:49:31.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T09:49:31.047Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "FMS_ICS\\Controllers\\LoginController.cs",
-              "ToolTip": "D:\\Dotnet_Training\\MainProject\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\renuka\\FMS_ICS_JAN2K25\\FMS_ICS\\FMS_ICS\\Controllers\\LoginController.cs",
               "RelativeToolTip": "FMS_ICS\\Controllers\\LoginController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAswCEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

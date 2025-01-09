@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<FMS_ICS.Models.User>
+
+@{ ViewBag.Title = "Pending Users"; }
+
+<h2>Pending Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Username</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+<tr>
+    <td>@user.FullName</td>
+    <td>@user.Email</td>
+    <td>@user.PhoneNumber</td>
+    <td>@user.Username</td>
+    <td>
+        @Html.ActionLink("View Details", "Verify", new { id = user.UserID }) |
+        @using (Html.BeginForm("Activate", "AdminActions", new { id = user.UserID }, FormMethod.Post))
+        {
+@Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-success">Activate</button>}
+    </td>
+</tr>}
+    </tbody>
+</table>
